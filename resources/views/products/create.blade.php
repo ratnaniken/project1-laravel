@@ -12,15 +12,19 @@
         @csrf
         <div class="mb-3">
             <label>Nama Produk</label>
-            <input type="text" name="nama" class="form-control" required>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Deskripsi</label>
+            <textarea name="description" class="form-control" rows="3"></textarea>
         </div>
         <div class="mb-3">
             <label>Harga</label>
-            <input type="text" name="harga" class="form-control" required>
+            <input type="text" name="price" class="form-control" required>
         </div>
         <div class="mb-3">
             <label>Stok</label>
-            <input type="number" name="stok" class="form-control" required>
+            <input type="number" name="stock" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-success">Simpan</button>
         <a href="{{ route('products.index') }}" class="btn btn-secondary">Kembali</a>

@@ -37,10 +37,10 @@
                             @foreach($products as $index => $product)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
-                                    <td>{{ $product->nama }}</td>
-                                    <td>{{ $product->deskripsi }}</td>
-                                    <td>Rp{{ number_format($product->harga, 0, ',', '.') }}</td>
-                                    <td>{{ $product->stok }}</td>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->description }}</td>
+                                    <td>Rp{{ number_format($product->price, 0, ',', '.') }}</td>
+                                    <td>{{ $product->stock }}</td>
                                     <td>
                                         <a href="{{ route('products.show', $product->id) }}" 
                                            class="btn btn-info btn-sm">👁️</a>

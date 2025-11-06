@@ -42,14 +42,16 @@ class ProdukController extends Controller
     }
 
     // Edit produk
-    public function edit(Product $product)
+    public function edit($id)
     {
+        $product = Product::findOrFail($id);
         return view('products.edit', compact('product'));
     }
 
     // Update produk
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
+        $product = Product::findOrFail($id);
         $request->validate([
             'name' => 'required|string|max:100',
             'price' => 'required|numeric',

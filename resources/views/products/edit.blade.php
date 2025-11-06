@@ -13,15 +13,19 @@
         @method('PUT')
         <div class="mb-3">
             <label>Nama Produk</label>
-            <input type="text" name="nama" value="{{ $product->nama }}" class="form-control" required>
+            <input type="text" name="name" value="{{ $product->name }}" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Deskripsi</label>
+            <textarea name="description" class="form-control" rows="3">{{ $product->description }}</textarea>
         </div>
         <div class="mb-3">
             <label>Harga</label>
-            <input type="text" name="harga" value="{{ $product->harga }}" class="form-control" required>
+            <input type="text" name="price" value="{{ $product->price }}" class="form-control" required>
         </div>
         <div class="mb-3">
             <label>Stok</label>
-            <input type="number" name="stok" value="{{ $product->stok }}" class="form-control" required>
+            <input type="number" name="stock" value="{{ $product->stock }}" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
         <a href="{{ route('products.index') }}" class="btn btn-secondary">Kembali</a>

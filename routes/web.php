@@ -34,16 +34,17 @@ Route::middleware('auth')->group(function () {
 
     // Semua user (login biasa) bisa melihat data produk
     Route::get('/products', [ProdukController::class, 'index'])->name('products.index');
-    Route::get('/products/{id}', [ProdukController::class, 'show'])->name('products.show');
-
+    
     // Khusus ADMIN bisa CRUD
-    Route::middleware('role:admin')->group(function () {
+    // Route::middleware('role:admin')->group(function () {
         Route::get('/products/create', [ProdukController::class, 'create'])->name('products.create');
         Route::post('/products', [ProdukController::class, 'store'])->name('products.store');
         Route::get('/products/{id}/edit', [ProdukController::class, 'edit'])->name('products.edit');
         Route::put('/products/{id}', [ProdukController::class, 'update'])->name('products.update');
         Route::delete('/products/{id}', [ProdukController::class, 'destroy'])->name('products.destroy');
-    });
+    // });
+    
+    Route::get('/products/{id}', [ProdukController::class, 'show'])->name('products.show');
 });
 
 require __DIR__.'/auth.php';
